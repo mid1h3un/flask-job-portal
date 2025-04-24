@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/index.css') }}">
+</head>
+<body>
+    <form id="loginForm" class="active" method="POST" action="/login">
+        <h3>Login Here</h3>
+
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Email or Phone" id="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Password" id="password" required>
+
+        <button type="submit">Log In</button>
+    </form>
+    <form id="signupForm" method="POST" action="/signup">
+        <h3>Sign Up Here</h3>
+
+        <div style="display: flex; gap: 10px;">
+            <div>
+                <label for="signupUsername">Username</label>
+                <input type="text" name="username" id="signupUsername" placeholder="Enter Username" required>
+            </div>
+    
+            <div>
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone" placeholder="Enter Phone Number" required>
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 15px;">
+            <label for="role" style="margin-bottom: 25px;">You are :</label>
+            <select name="role" id="role" required>
+                <option value="">-- Select --</option>
+                <option value="Job Seeker">Job Seeker</option>
+                <option value="Employer">Employer</option>
+            </select>
+        </div>
+
+            <label for="email">Email </label>
+            <input type="email" name="email" id="email" placeholder="Enter Email" required>
+       
+            <label for="signupPassword">Password </label>
+            <input type="password" name="password" id="signupPassword" placeholder="Enter Password" required>
+
+            <label for="confirmPassword">Confirm Password </label>
+            <input type="password" name="confirm_password" id="confirmPassword" placeholder="Confirm Password" required>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+
+        <button class="toggle-btn" onclick="toggleForms()">Switch to Sign Up</button>
+
+
+    <script>
+        function toggleForms() {
+            const loginForm = document.getElementById("loginForm");
+            const signupForm = document.getElementById("signupForm");
+            const toggleBtn = document.querySelector(".toggle-btn");
+
+            const isLoginVisible = loginForm.classList.contains("active");
+
+            loginForm.classList.toggle("active", !isLoginVisible);
+            signupForm.classList.toggle("active", isLoginVisible);
+            toggleBtn.textContent = isLoginVisible ? "Switch to Login" : "Switch to Sign Up";
+        }
+    </script>
+
+</body>
+</html>

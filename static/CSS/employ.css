@@ -1,0 +1,40 @@
+body {
+    background-color: #f8f9fa;
+}
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    background-color: #343a40;
+    padding-top: 20px;
+}
+.sidebar .nav-link {
+    color: #fff;
+    margin: 20px 20px 20px 20px;
+    text-align: center;
+}
+.sidebar .nav-link.active {
+    background-color: #495057;
+    border-radius: 0.375rem;
+}
+.main-content {
+    margin-left: 240px;
+    padding: 40px 20px;
+}
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.logout-btn {
+    margin-top: auto;
+    padding: 15px 20px;
+}
+.profile-icon {
+    font-size: 1.5rem;
+    margin-right: 8px;
+}
